@@ -1,0 +1,14 @@
+# shellcheck shell=bash
+# shellcheck disable=SC2034
+
+# If not running interactively, don't do anything
+case $- in
+	*i*) ;;
+	*) return ;;
+esac
+
+# Set editor variable
+export EDITOR=vim
+
+# Azure DevOps PAT (decrypted from encrypted chezmoi source at apply time)
+export PERSONAL_ACCESS_TOKEN="{{ joinPath .chezmoi.sourceDir ".personal_access_token.age" | include | decrypt | trim }}"
