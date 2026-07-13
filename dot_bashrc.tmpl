@@ -11,4 +11,6 @@ esac
 export EDITOR=vim
 
 # Azure DevOps PAT (decrypted from encrypted chezmoi source at apply time)
-export PERSONAL_ACCESS_TOKEN="{{ joinPath .chezmoi.sourceDir ".personal_access_token.age" | include | decrypt | trim }}"
+export PERSONAL_ACCESS_TOKEN="{{ joinPath .chezmoi.sourceDir ".personal_access_token.age" | include | decrypt | trim | replace "\n" "" }}"
+
+alias homelab='ssh -i ~/.ssh/id_homelab 192.168.1.10'
