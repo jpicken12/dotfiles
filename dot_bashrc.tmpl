@@ -18,7 +18,7 @@ alias homelab='ssh -i ~/.ssh/id_homelab 192.168.1.10'
 
 # Claude code: switch between local and cloud
 claude-local() {
-  ANTHROPIC_AUTH_TOKEN=ollama ANTHROPIC_API_KEY="" ANTHROPIC_BASE_URL=http://192.168.1.10:11434 claude --model qwen2.5-coder:7b "$@"
+  ANTHROPIC_AUTH_TOKEN=ollama ANTHROPIC_API_KEY="" ANTHROPIC_BASE_URL=http://192.168.1.10:11434 claude --model zephyr:7b "$@"
 }
 claude-cloud() {
   claude "$@"   # falls back to your normal Claude Code auth — no Ollama env vars set
