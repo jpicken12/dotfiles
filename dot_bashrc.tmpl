@@ -23,3 +23,8 @@ claude-local() {
 claude-cloud() {
   claude "$@"   # falls back to your normal Claude Code auth — no Ollama env vars set
 }
+
+# Load bash completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
